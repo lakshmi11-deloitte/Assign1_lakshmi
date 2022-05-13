@@ -1,0 +1,76 @@
+#%RAML 1.0
+types:
+  GetResponse1:
+    properties:
+      id:
+        example: "2484"
+        type: string
+      name:
+        example: Kartik Kocchar
+        type: string
+      email:
+        example: kartik_kocchar@rutherford.io
+        type: string
+      gender:
+        example: female
+        type: string
+      status:
+        example: inactive
+        type: string
+  Request2:
+    properties:
+      postId:
+        example: 2003
+        type: number
+        format: int
+  PostResponse2:
+    properties:
+      Userdetails:
+        items:
+          properties:
+            postId:
+              example: "2003"
+              type: string
+            id:
+              example: "1978"
+              type: string
+            name:
+              example: Bhaaswar Pothuvaal III
+              type: string
+  Response3:
+    properties:
+      Name:
+        example: Gorakhanatha Chaturvedi
+        type: string
+      Status:
+        example: active
+        type: string
+      Gender:
+        example: femle
+        type: string
+title: Lakshmi Harish Kumar
+mediaType:
+  - application/json
+version: v1
+protocols:
+  - HTTP
+/milestone1:
+  get:
+    responses:
+      "200":
+        body:
+          type: GetResponse1
+/milestone2:
+  post:
+    body:
+      type: Request2
+    responses:
+      "201":
+        body:
+          type: PostResponse2
+/milestone3:
+  get:
+    responses:
+      "200":
+        body:
+          type: Response3
